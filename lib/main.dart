@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'code_runner/code_runner.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -32,7 +34,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _runner() {}
 
   @override
   Widget build(BuildContext context) {
@@ -47,10 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _runner,
+      floatingActionButton: const FloatingActionButton(
+        onPressed: CodeRunner.codeRunner,
         tooltip: 'Build Runner',
-        child: const Icon(
+        child: Icon(
           CupertinoIcons.arrow_down_right_circle,
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
